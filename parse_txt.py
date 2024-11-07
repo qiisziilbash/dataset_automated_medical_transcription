@@ -17,6 +17,8 @@ def process_talk_turn(text: str) -> Dict[str, str]:
 
 def parse_txt_d0420_s1(filename: str) -> Dict[str, str]:
 
+    #TODO: There are weird "i" chars
+
     def extract_segments(text: str) -> List[str]:
         pattern = r"(?:Clinician:|Patient:)(.*?)(?=(?:Clinician:|Patient:)|$)"
         matches = re.findall(pattern, text, re.DOTALL)
