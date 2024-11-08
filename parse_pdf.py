@@ -2,6 +2,7 @@
 import os
 from pypdf import PdfReader
 
+#%%
 def extract_text_from_pdf(pdf_path):
     """Extract text content from a PDF file."""
     try:
@@ -39,4 +40,3 @@ def process_all_pdfs():
 #%%
 process_all_pdfs()
 
-# %%

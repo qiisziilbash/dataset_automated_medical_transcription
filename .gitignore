@@ -1,2 +1,5 @@
 venv
-source_text
+transcripts/source_text
+.env
+processed_transcripts.pkl
+upload.py
