@@ -2,6 +2,8 @@
 import os
 import re
 from typing import Dict, List, Tuple
+import unidecode
+
 
 source_dir = "transcripts/source_text"
 
@@ -12,13 +14,11 @@ def process_talk_turn(text: str) -> Dict[str, str]:
 
     # Replace "-\n" with empty string and standalone "\n" with space
     processed_text = text.replace("-\n", "").replace("\n", " ")
+    processed_text = unidecode.unidecode(processed_text)
     return processed_text
 
 
 def parse_txt_d0420_s1(filename: str) -> Dict[str, str]:
-
-    #TODO: There are weird "i" chars
-
     def extract_segments(text: str) -> List[str]:
         pattern = r"(?:Clinician:|Patient:)(.*?)(?=(?:Clinician:|Patient:)|$)"
         matches = re.findall(pattern, text, re.DOTALL)
