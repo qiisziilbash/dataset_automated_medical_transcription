@@ -7,7 +7,7 @@ from typing import Dict, List, Tuple
 import unidecode
 
 #%%
-source_dir = "transcripts/source_text"
+source_dir = "data/source_text"
 
 
 def process_talk_turn(text: str) -> Dict[str, str]:
@@ -72,5 +72,5 @@ for filename in os.listdir(source_dir):
 
 
 # %%
-with open("processed_transcripts.pkl", "wb") as f:
+with open("data/processed_transcripts.pkl", "wb") as f:
     pickle.dump(data, f)

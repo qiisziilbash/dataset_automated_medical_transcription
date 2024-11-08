@@ -14,13 +14,12 @@ def extract_text_from_pdf(pdf_path):
 
         return text
     except Exception as e:
-        print(f"Error processing {pdf_path}: {str(e)}")
-        return None
+        raise ValueError(f"Error processing {pdf_path}: {str(e)}")
 
 def process_all_pdfs():
     """Process all PDFs in the transcripts/source directory."""
-    source_dir = "transcripts/source"
-    output_dir = "transcripts/text"
+    source_dir = "../transcripts/source"
+    output_dir = "data/source_text"
 
     os.makedirs(output_dir, exist_ok=True)
 

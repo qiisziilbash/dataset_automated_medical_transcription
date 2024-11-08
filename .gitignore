@@ -1,5 +1,0 @@
-venv
-transcripts/source_text
-.env
-processed_transcripts.pkl
-upload.py
